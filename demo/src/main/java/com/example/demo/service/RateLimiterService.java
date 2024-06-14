@@ -23,7 +23,7 @@ public class RateLimiterService {
     public boolean canSendNotification(String recipient, NotificationType type) {
         RateLimitRule rule = rateLimitRules.get(type);
         if (rule == null) {
-            return true; // No rule means no limit
+            return true; 
         }
 
         notifications.putIfAbsent(recipient, new ConcurrentHashMap<>());
@@ -33,12 +33,10 @@ public class RateLimiterService {
         ConcurrentLinkedQueue<LocalDateTime> timestamps = recipientNotifications.get(type);
         LocalDateTime now = LocalDateTime.now();
 
-        // Remove expired timestamps
         while (!timestamps.isEmpty() && timestamps.peek().isBefore(now.minus(rule.getPeriod()))) {
             timestamps.poll();
         }
 
-        // Check if within the limit
         if (timestamps.size() < rule.getMaxRequests()) {
             timestamps.add(now);
             return true;
