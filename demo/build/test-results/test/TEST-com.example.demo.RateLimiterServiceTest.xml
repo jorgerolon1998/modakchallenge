@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.demo.RateLimiterServiceTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-06-14T13:08:50" hostname="Jorge-Rolon.fibertel.com.ar" time="0.012">
+  <properties/>
+  <testcase name="testCanSendNotification()" classname="com.example.demo.RateLimiterServiceTest" time="0.012"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
