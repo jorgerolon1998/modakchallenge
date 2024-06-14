@@ -18,7 +18,6 @@ public class DemoApplication {
 		sendNotification(rateLimiterService, notification1);
 		sendNotification(rateLimiterService, notification2);
 
-		// Simulate sending multiple notifications to test rate limiting
 		for (int i = 0; i < 5; i++) {
 			sendNotification(rateLimiterService, notification1);
 		}
